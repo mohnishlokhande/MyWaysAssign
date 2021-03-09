@@ -23,7 +23,7 @@ export default class Header extends Component {
 
 
     render() {
-        return (
+        return (    
             <div className="outContainerNav">
                 <div className="mcontainer d-flex align-items-center">
                     <a href="/" className="navbar-brand" >
@@ -32,10 +32,15 @@ export default class Header extends Component {
                     <br/>
                     
                     <Navbar className="nav-menu ml-auto" dark expand="md">
-                        <NavbarToggler onClick={this.toggleNav} />&nbsp;
+                        {/* <NavbarToggler onClick={this.toggleNav} />&nbsp; */}
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" 
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                            aria-expanded="false" aria-label="Toggle navigation" onClick={this.toggleNav}>
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
-                                <NavItem>
+                                <NavItem >
                                     <DropD/>
                                 </NavItem>
                                 <NavItem>
@@ -55,7 +60,7 @@ export default class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                             </Nav>
-
+                                                            
                         </Collapse>
                         <Nav navbar>
                             <NavItem>
@@ -65,8 +70,8 @@ export default class Header extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="/login">
-                                    <button type="button" className="btn btn-success get-started-btn">
-                                        Login
+                                    <button type="button" className="btn started-btn">
+                                        LOGIN
                                     </button> 
                                 </NavLink>
                             </NavItem>
