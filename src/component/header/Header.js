@@ -29,7 +29,7 @@ export default class Header extends Component {
                     <a href="/" className="navbar-brand" >
                         <img src={Logo} style={{width:"66px"}}  alt="MyWays"/>
                     </a>
-                    <br/>
+                    {/* <br/> */}
                     
                     <Navbar className="nav-menu ml-auto" dark expand="md">
                         {/* <NavbarToggler onClick={this.toggleNav} />&nbsp; */}
@@ -60,24 +60,18 @@ export default class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                             </Nav>
-                                                            
+
                         </Collapse>
-                        <Nav navbar>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/other">
-                                    Sign up&nbsp;
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/login">
-                                    <button type="button" className="btn started-btn">
-                                        LOGIN
-                                    </button> 
-                                </NavLink>
-                            </NavItem>
-                        </Nav>
-                        
-                </Navbar>  
+                    </Navbar>
+
+                    <div className="logSig">
+                        <div className="signdiv" to="/other">
+                            SIGN UP
+                        </div>
+                        <div >
+                            <button type="button" className="btnlogin">LOGIN</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

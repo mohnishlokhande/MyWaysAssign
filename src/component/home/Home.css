@@ -56,3 +56,11 @@
     color: #000000;
     opacity: 1;
 }
+
+
+
+.btnSign{
+    color: aliceblue !important;
+    font-weight: bold !important;
+    background-color: #7ECB20 !important;
+}

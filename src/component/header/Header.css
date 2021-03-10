@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    /* width: 95%; */
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     transition: all 0.5s;
     z-index: 997;
+    height: 10vh;
 }
 .navHead{
     color: rgb(27, 26, 26);
@@ -48,29 +50,32 @@ ul {
     white-space: nowrap;
     padding: 10px 0 10px 28px;
 }
-.started-btn {
+.btnlogin {
     /* color: #fff; */
     background: #7ECB20 !important;
     border-radius: 27px !important;
-    padding: 27px 27px 27px 27px !important;
-    white-space: nowrap;
-    transition: 0.3s;
-    font-size: 14px;
-    display: inline-block;
-    border: 2px solid #7ECB20;
-    font-weight: 600;
-    font: normal normal 600 16px/22px Open Sans;
-    letter-spacing: 0.48px;
+     padding: 10px 50px!important;
     color: #FFFFFF;
+    border: none;
     opacity: 1;
     display: flex !important;
     justify-content: center;
     align-items: center;
  
 }
-.started-btn:hover {
+.btnlogin:hover {
     background: #7ECB20;
 
+}
+.logSig{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.signdiv{
+    margin-right: 25px;
+    color:#7ECB20 ;
+    font-weight: bold;
 }
 
 
@@ -80,6 +85,16 @@ ul {
     }
     .navHead{
         font-size: 30px;
+    }
+    .logSig{
+        /* display: flex; */
+        flex-direction: column;
+    }
+    .btnlogin{
+        padding: 10px 30px!important;
+    }
+    .outContainerNav{
+        display: none;
     }
 }
 @media only screen and (min-width:768px){
