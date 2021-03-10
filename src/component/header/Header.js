@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './Header.css';
 import {NavLink} from 'react-router-dom';
 import { Navbar,Nav,NavbarToggler,Collapse,NavItem} from 'reactstrap';
-import { Modal,ModalHeader } from 'reactstrap';
+import { Modal,ModalHeader, ModalBody } from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
 import Login from '../home/Login';
 import SignUp from '../home/SignUp';
 import Flash from './Instant logo.png';
+import Success from './Icon awesome-check-circle@2x.png';
 
 export default class Header extends Component {
 
@@ -16,11 +17,15 @@ export default class Header extends Component {
         this.state = {
             isNavOpen: false,
             isModalOpenL: false,
-            isModalOpenS:false
+            isModalOpenS:false,
+            isModalSucess: true,
         };
         this.toggleNav = this.toggleNav.bind(this);  
         this.toggleModalL= this.toggleModalL.bind(this);
         this.toggleModalS= this.toggleModalS.bind(this);
+        this.toggleModalSucess= this.toggleModalSucess.bind(this);
+        this.autoReload= this.autoReload.bind(this);
+
     }
 
     toggleNav(){
@@ -32,12 +37,21 @@ export default class Header extends Component {
         this.setState({
             isModalOpenL: !this.state.isModalOpenL
         });
-        console.log("working" + this.state.isModalOpenL );
     }
     toggleModalS(){
         this.setState({
             isModalOpenS: !this.state.isModalOpenS
         });
+    }
+    toggleModalSucess(){
+        this.setState({
+            isModalSucess: !this.state.isModalSucess
+        });
+    }
+    autoReload(){
+        this.setState({
+            isModalSucess: !this.state.isModalSucess
+        })
     }
 
     render() {
@@ -93,20 +107,31 @@ export default class Header extends Component {
                         </div>
                     </div>
                 </div>
-                <Modal isOpen={this.state.isModalOpenL} toggle={this.toggleModalL} className="modalLog">
+                <Modal isOpen={this.state.isModalOpenL} toggle={this.toggleModalL} 
+                    className="modalLog" style={{position: "absolute",width:"100%", margin:'0'}}>
                         <ModalHeader toggle={this.toggleModalL}>
                             <p className="headL">Login</p>
                         </ModalHeader>
                         <Login isopen={this.state.isModalOpenL}
-                            refreshPage={this.toggleModalL}/>
+                            refreshPage={this.toggleModalL}
+                            reloader={this.autoReload}
+                            />
                 </Modal>
-                <Modal isOpen={this.state.isModalOpenS} toggle={this.toggleModalS}>
+                <Modal isOpen={this.state.isModalOpenS} toggle={this.toggleModalS} style={{top:"12vh"}}>
                         <ModalHeader toggle={this.toggleModalS} className="homeTitle">
                             <p className="headS">Sign Up</p>
                             <p className="subS">It's quick and easy</p>    
                         </ModalHeader>
                         <SignUp isopen={this.state.isModalOpenS}
-                            refreshPage={this.toggleModalS}/>
+                            refreshPage={this.toggleModalS}
+                            />
+                </Modal>
+
+                <Modal isOpen={this.state.isModalSucess} toggle={this.toggleModalSucess} style={{top:"12vh"}} className="modalsuccess">
+                    <ModalBody className="boxsuccess">
+                        <img src={Success} style={{width:"73px"}}  alt="Successful"/><br/>
+                        <h1 className="successH">Thanks. Successful!</h1>
+                    </ModalBody>
                 </Modal>
             </div>
         )

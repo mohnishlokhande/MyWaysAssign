@@ -8,23 +8,21 @@ export default class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            isModalOpen: true,
+            isModalOpenS: false,
             isModalOpenL: false,
-            isModalSucess: false,
             email :'',
             password:'' ,
         };
-        this.toggleModal= this.toggleModal.bind(this);
+        this.toggleModalS= this.toggleModalS.bind(this);
         this.refreshPage= this.refreshPage.bind(this);
         this.handleChange= this.handleChange.bind(this);
         this.handleSubmit= this.handleSubmit.bind(this);
         this.toggleModalL= this.toggleModalL.bind(this);
-        this.toggleModalSucess= this.toggleModalSucess.bind(this);
     }
 
-    toggleModal(){
+    toggleModalS(){
         this.setState({
-            isModalOpen: !this.state.isModalOpen
+            isModalOpenS: !this.state.isModalOpenS
         });
     }
     refreshPage(){ 
@@ -55,11 +53,7 @@ export default class Login extends Component {
         });
         console.log("working" + this.state.isModalOpen +this.state.isModalOpenL);
     }
-    toggleModalSucess(){
-        this.setState({
-            isModalSucess: !this.state.isModalSucess
-        });
-    }
+
 
     render() {
         return (
@@ -99,15 +93,7 @@ export default class Login extends Component {
                             refreshPage={this.toggleModalS}/>
                 </Modal>
 
-                <Modal isOpen={this.state.isModalSucess} toggle={this.toggleModalSucess}>
-                    <ModalHeader toggle={this.toggleModalSucess} className="homeTitle">
-                        <p className="headS">Sign Up</p>
-                        <p className="subS">It's quick and easy</p>    
-                    </ModalHeader>
-                    <ModalBody>
-                        <h1>Thanks, Successful!</h1>
-                    </ModalBody>
-                </Modal>
+
             </>
         )
     }

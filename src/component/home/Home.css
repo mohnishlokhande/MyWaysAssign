@@ -115,3 +115,12 @@
     color: #7ECB20;
     font-weight: bold;
 }
+
+@media only screen and (max-width:768px){
+    .modalBS{
+        height: 62vh !important;
+    }
+    .homeTitle{
+        margin-left: 25%;
+    }
+}

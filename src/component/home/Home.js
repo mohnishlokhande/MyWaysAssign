@@ -32,13 +32,8 @@ export default class Home extends Component {
                     <button type="button" className="btn get-started-btn" onClick={this.toggleModal}>
                         <a className="hget" onClick={this.toggleModal}>Get Started</a>
                     </button> 
-                    {/* <Button outline onClick={this.toggleModal}>
-                                        <span className="fa fa-sign-in fa-lg">Login</span>
-                                    </Button> */}
-                    {/* <a className="get-started-btn" style={{color:"white"}}>
-                        <p className="hget">Get Started</p>
-                    </a> */}
-                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    
+                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} style={{top:"12vh"}}>
                         <ModalHeader toggle={this.toggleModal} className="homeTitle">
                             <p className="headS">Sign Up</p>
                             <p className="subS">It's quick and easy</p>    

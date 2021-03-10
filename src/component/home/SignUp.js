@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label,Row, Col } from 'reactstrap';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 export default class SignUp extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(isopen){
+        super(isopen);
         this.state = {
-            isModalOpen: true,
+            isModalOpen: {isopen},
             firstname : '',
             lastname: '',
             password : '',
@@ -44,14 +45,17 @@ export default class SignUp extends Component {
             password:'' ,
             email :'',
         })
-       
-       }
-    
+        // this.props.history.push('/home')
+    }
+    componentWillReceiveProps({isopen}) {
+        this.setState({...this.state,isopen})
+        console.log("update " + isopen)
+      }
 
     render() {
         return (
             <>
-                <ModalBody>
+                <ModalBody className="modalBS">
                     <form  onSubmit={this.handleSubmit}>
                         <Row className="col-md-12">
                         <FormGroup className="col-md-6">
@@ -81,7 +85,7 @@ export default class SignUp extends Component {
                         <FormGroup className="col-md-12"> 
                                 <Input type="submit" value ="Sign Up" className="btn btnSign"
                                     />
-                        </FormGroup> 
+                        </FormGroup>
                     </form>
                 </ModalBody>
             </>

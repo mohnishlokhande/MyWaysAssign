@@ -129,9 +129,10 @@
   }
 .btnlogin {
     /* color: #fff; */
-    background: #7ECB20 !important;
+    /* background: #7ECB20 !important; */
     border-radius: 27px !important;
-     padding: 5px 25px!important;
+    /* padding: 5px 25px!important; */
+    background: #7ECB20 0% 0% no-repeat padding-box;
     color: #FFFFFF;
     border: none;
     opacity: 1;
@@ -139,11 +140,16 @@
     justify-content: center;
     align-items: center;
     transition: all 0.5s;
- 
+    width: 134px;
+    height: 38px;
+    font: normal normal 600 16px/22px Open Sans;
+    letter-spacing: 0.48px;
 }
 .btnlogin:hover {
     background: #7ECB20;
-    padding: 10px 35px !important;
+    /* padding: 10px 40px !important; */
+    height: 42px;
+    width: 142px;
 }
 .logSig{
     display: flex;
