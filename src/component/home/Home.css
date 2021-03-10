@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10vh;
+    padding-top: 18vh;
 }
 
 .get-started-btn {
@@ -63,4 +63,39 @@
     color: aliceblue !important;
     font-weight: bold !important;
     background-color: #7ECB20 !important;
+}
+.homeTitle{
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-left: 32%;
+    text-align: center;
+}
+.subS{
+    font: normal normal normal 22px/30px Open Sans;
+    letter-spacing: 0px;
+    color: #212020;
+    opacity: 1;
+}
+.headS{
+    font: normal normal 600 33px/44px Segoe UI;
+    letter-spacing: 0px;
+    color: #333333;
+    opacity: 1;
+}
+.forget{
+    text-align: end;
+    font: normal normal 600 15px/20px Segoe UI;
+    letter-spacing: 0px;
+    color: #7ECB20;
+    opacity: 1;
+}
+.newL{
+    text-align: center;
+    font: normal normal 600 16px/21px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.modalL{
+    height: 100%;
 }

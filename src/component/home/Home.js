@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css'
 import SignUp from './SignUp';
-import {Button} from 'reactstrap';
+import { Modal,ModalHeader } from 'reactstrap';
+
 
 export default class Home extends Component {
 
@@ -37,8 +38,14 @@ export default class Home extends Component {
                     {/* <a className="get-started-btn" style={{color:"white"}}>
                         <p className="hget">Get Started</p>
                     </a> */}
-                    <SignUp isopen={this.state.isModalOpen}
-                        refreshPage={this.toggleModal}/>
+                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                        <ModalHeader toggle={this.toggleModal} className="homeTitle">
+                            <p className="headS">Sign Up</p>
+                            <p className="subS">It's quick and easy</p>    
+                        </ModalHeader>
+                        <SignUp isopen={this.state.isModalOpen}
+                            refreshPage={this.toggleModal}/>
+                    </Modal>
                 </div>  
                 
             </>

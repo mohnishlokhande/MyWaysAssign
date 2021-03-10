@@ -52,9 +52,10 @@ ul {
 }
 .btnlogin {
     /* color: #fff; */
-    background: #7ECB20 !important;
-    border-radius: 27px !important;
-     padding: 10px 50px!important;
+    /* background: #7ECB20 !important; */
+    border-radius: 19px !important;
+    background: #7ECB20 0% 0% no-repeat padding-box;
+    /* padding: 10px 50px!important; */
     color: #FFFFFF;
     border: none;
     opacity: 1;
@@ -175,4 +176,11 @@ ul {
     color: #000 i !important;
     background-color: #fff !important;
     border-color: #fff !important;
+}
+.headL{
+    text-align: justify;
+    font: normal normal bold 24px/32px Segoe UI;
+    letter-spacing: 0px;
+    color: #333333;
+    opacity: 1;
 }

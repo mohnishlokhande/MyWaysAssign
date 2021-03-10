@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import {Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label,Row, Col } from 'reactstrap';
 import './Home.css';
 
-export default class SignUp extends Component {
+export default class Login extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             isModalOpen: true,
-            firstname : '',
-            lastname: '',
-            password : '',
             email :'',
+            password:'' ,
         };
         this.toggleModal= this.toggleModal.bind(this);
         this.refreshPage= this.refreshPage.bind(this);
@@ -39,49 +37,32 @@ export default class SignUp extends Component {
         e.preventDefault();
 
         this.setState({
-            firstname:'',
-            lastname:'',
-            password:'' ,
             email :'',
-        })
-       
-       }
+            password:'' ,  
+        })   
+    }    
     
 
     render() {
         return (
             <>
-                <ModalBody>
+                <ModalBody className="modalL">
                     <form  onSubmit={this.handleSubmit}>
-                        <Row className="col-md-12">
-                        <FormGroup className="col-md-6">
-                
-                                <Input type="text" id="firstname" name="firstname" value ={this.state.firstname} onChange = {this.handleChange}
-                                    placeholder="First Name" required/>
-
-                        </FormGroup>
-                        <FormGroup className="col-md-6">
-            
-                                <Input type="text" id="lastname" name="lastname" value ={this.state.lastname} onChange = {this.handleChange}
-                                    placeholder="Last Name" required/>
-                        </FormGroup>
-                        </Row>
                         <FormGroup className="col-md-12">
-                            
                                 <Input type="email" id="email" name="email" value ={this.state.email} onChange = {this.handleChange}
-                                    placeholder="Your Email" required/>
-    
+                                    placeholder="Email" required/>
                         </FormGroup>
 
                         <FormGroup className="col-md-12"> 
                                 <Input type="password" id="password" name="password" value ={this.state.password} onChange = {this.handleChange}
                                     placeholder="Password" required/>
                         </FormGroup> 
-                        <br/>
+                        <p className="forget">Forgot Password?</p>
                         <FormGroup className="col-md-12"> 
-                                <Input type="submit" value ="Sign Up" className="btn btnSign"
+                                <Input type="submit" value ="Login" className="btn btnSign"
                                     />
                         </FormGroup> 
+                        <p className="newL">New to MyWays? Sign Up here</p>
                     </form>
                 </ModalBody>
             </>

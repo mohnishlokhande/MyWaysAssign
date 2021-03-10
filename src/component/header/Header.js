@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './Header.css';
 import {NavLink} from 'react-router-dom';
 import { Navbar,Nav,NavbarToggler,Collapse,NavItem} from 'reactstrap';
+import { Modal,ModalHeader } from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
+import Login from '../home/Login';
 
 export default class Header extends Component {
 
@@ -11,8 +13,11 @@ export default class Header extends Component {
         super(props);
         this.state = {
             isNavOpen: false,
+            isModalOpen: false
         };
-        this.toggleNav = this.toggleNav.bind(this);                
+        this.toggleNav = this.toggleNav.bind(this);  
+        this.toggleModal= this.toggleModal.bind(this);
+              
     }
 
     toggleNav(){
@@ -20,7 +25,12 @@ export default class Header extends Component {
             isNavOpen: !this.state.isNavOpen
         });
     }
-
+    toggleModal(){
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+        console.log("working" + this.state.isModalOpen );
+    }
 
     render() {
         return (    
@@ -69,10 +79,18 @@ export default class Header extends Component {
                             SIGN UP
                         </div>
                         <div >
-                            <button type="button" className="btnlogin">LOGIN</button>
+                            <button type="button" className="btnlogin" onClick={this.toggleModal}>LOGIN</button>
                         </div>
                     </div>
                 </div>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} className="modalLog">
+                        <ModalHeader toggle={this.toggleModal}>
+                            <p className="headL">Login</p>
+ 
+                        </ModalHeader>
+                        <Login isopen={this.state.isModalOpen}
+                            refreshPage={this.toggleModal}/>
+                </Modal>
             </div>
         )
     }
