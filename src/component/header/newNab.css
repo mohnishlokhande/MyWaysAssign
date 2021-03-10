@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     /* width: 95%; */
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    box-shadow: 0px 3px 6px #0000000F;
     transition: all 0.5s;
     z-index: 997;
     height: 10vh;
@@ -131,18 +131,19 @@
     /* color: #fff; */
     background: #7ECB20 !important;
     border-radius: 27px !important;
-     padding: 10px 50px!important;
+     padding: 5px 25px!important;
     color: #FFFFFF;
     border: none;
     opacity: 1;
     display: flex !important;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
  
 }
 .btnlogin:hover {
     background: #7ECB20;
-
+    padding: 10px 35px !important;
 }
 .logSig{
     display: flex;
@@ -165,10 +166,10 @@
     .navHead{
         font-size: 30px;
     }
-    .logSig{
-        /* display: flex; */
-        /* flex-direction: column; */
-    }
+    /* .logSig{
+        display: flex; */
+        /* flex-direction: column; 
+    }*/
     .btnlogin{
         padding: 5px 20px!important;
     }
@@ -188,4 +189,7 @@
         width: 55px;
     }
 
+}
+.nav-item{
+  margin-right: 40px;
 }

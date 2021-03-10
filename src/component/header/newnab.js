@@ -44,9 +44,9 @@ export default class NewHeader extends Component {
 
                             <div class="nav-links">
                             <DropD /><hr style={{margin:"0"}} />
-                                <a href="#" target="_blank">Instant Apply</a><hr style={{margin:"0"}} />
-                                <a href="#" target="_blank">Pricing</a><hr style={{margin:"0"}} />
-                                <a href="#" target="_blank">About us</a><hr style={{margin:"0"}} />
+                                <a href="#" >Instant Apply</a><hr style={{margin:"0"}} />
+                                <a href="#" >Pricing</a><hr style={{margin:"0"}} />
+                                <a href="#" >About us</a><hr style={{margin:"0"}} />
 
                             </div>
                         </div>

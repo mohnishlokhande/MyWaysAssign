@@ -6,6 +6,8 @@ import { Modal,ModalHeader } from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
 import Login from '../home/Login';
+import SignUp from '../home/SignUp';
+import Flash from './Instant logo.png';
 
 export default class Header extends Component {
 
@@ -13,11 +15,12 @@ export default class Header extends Component {
         super(props);
         this.state = {
             isNavOpen: false,
-            isModalOpen: false
+            isModalOpenL: false,
+            isModalOpenS:false
         };
         this.toggleNav = this.toggleNav.bind(this);  
-        this.toggleModal= this.toggleModal.bind(this);
-              
+        this.toggleModalL= this.toggleModalL.bind(this);
+        this.toggleModalS= this.toggleModalS.bind(this);
     }
 
     toggleNav(){
@@ -25,11 +28,16 @@ export default class Header extends Component {
             isNavOpen: !this.state.isNavOpen
         });
     }
-    toggleModal(){
+    toggleModalL(){
         this.setState({
-            isModalOpen: !this.state.isModalOpen
+            isModalOpenL: !this.state.isModalOpenL
         });
-        console.log("working" + this.state.isModalOpen );
+        console.log("working" + this.state.isModalOpenL );
+    }
+    toggleModalS(){
+        this.setState({
+            isModalOpenS: !this.state.isModalOpenS
+        });
     }
 
     render() {
@@ -55,7 +63,9 @@ export default class Header extends Component {
                                 </NavItem>
                                 <NavItem>
     
-                                    <NavLink className="nav-link" to="/other"><span className="fa fa-flash fa-lg"></span>
+                                    <NavLink className="nav-link" to="/other">
+                                        {/* <span className="fa fa-flash fa-lg"></span> */}
+                                        <img src={Flash} style={{width:"30px", height:"30px"}} alt="/"/>
                                         Instant Apply&nbsp;
                                     </NavLink>
                                 </NavItem>
@@ -75,21 +85,28 @@ export default class Header extends Component {
                     </Navbar>
 
                     <div className="logSig">
-                        <div className="signdiv" to="/other">
+                        <span className="signdiv" onClick={this.toggleModalS}>
                             SIGN UP
-                        </div>
+                        </span>
                         <div >
-                            <button type="button" className="btnlogin" onClick={this.toggleModal}>LOGIN</button>
+                            <button type="button" className="btnlogin" onClick={this.toggleModalL}>LOGIN</button>
                         </div>
                     </div>
                 </div>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} className="modalLog">
-                        <ModalHeader toggle={this.toggleModal}>
+                <Modal isOpen={this.state.isModalOpenL} toggle={this.toggleModalL} className="modalLog">
+                        <ModalHeader toggle={this.toggleModalL}>
                             <p className="headL">Login</p>
- 
                         </ModalHeader>
-                        <Login isopen={this.state.isModalOpen}
-                            refreshPage={this.toggleModal}/>
+                        <Login isopen={this.state.isModalOpenL}
+                            refreshPage={this.toggleModalL}/>
+                </Modal>
+                <Modal isOpen={this.state.isModalOpenS} toggle={this.toggleModalS}>
+                        <ModalHeader toggle={this.toggleModalS} className="homeTitle">
+                            <p className="headS">Sign Up</p>
+                            <p className="subS">It's quick and easy</p>    
+                        </ModalHeader>
+                        <SignUp isopen={this.state.isModalOpenS}
+                            refreshPage={this.toggleModalS}/>
                 </Modal>
             </div>
         )

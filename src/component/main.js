@@ -13,6 +13,7 @@ export default class Main extends Component {
                 <NewHeader />
                 <Switch>
                     <Route extact path="/" component={Home}/>
+                    <Route path="/home" component={Home}/>
                 </Switch>
             </Router>
         );
