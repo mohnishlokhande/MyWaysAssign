@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css'
-import SignUp from './SignUp';
+// import SignUp from './SignUp';
 import { Modal,ModalHeader, ModalBody, Row } from 'reactstrap';
 import {FormGroup, Input} from 'reactstrap';
 import Success from '../header/Icon awesome-check-circle@2x.png';
@@ -63,6 +63,9 @@ export default class Home extends Component {
     combine(){
         this.toggleModalOTP();
         this.toggleModalSucess();
+        setTimeout(()=>{
+            this.setState({isModalSucess:!this.state.isModalSucess})
+        },2000)
     }
     render() {
         return (

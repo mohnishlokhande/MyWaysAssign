@@ -6,8 +6,8 @@ import { Modal,ModalHeader, ModalBody, Row } from 'reactstrap';
 import {FormGroup, Input} from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
-import Login from '../home/Login';
-import SignUp from '../home/SignUp';
+// import Login from '../home/Login';
+// import SignUp from '../home/SignUp';
 import Flash from './Instant logo.png';
 import Success from './Icon awesome-check-circle@2x.png';
 import '../home/Home.css';
@@ -87,6 +87,10 @@ export default class Header extends Component {
             passwordLog:'' ,  
             isModalOpenL: !this.state.isModalOpenL
         })   
+        this.toggleModalSucess();
+        setTimeout(()=>{
+            this.setState({isModalSucess:!this.state.isModalSucess})
+        },2000)
     }  
     handleSubmit=(e)=>{
         e.preventDefault();
@@ -104,6 +108,9 @@ export default class Header extends Component {
     combine(){
         this.toggleModalOTP();
         this.toggleModalSucess();
+        setTimeout(()=>{
+            this.setState({isModalSucess:!this.state.isModalSucess})
+        },2000)
     }
 
     render() {

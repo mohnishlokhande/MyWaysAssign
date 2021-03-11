@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './newNab.css';
-import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
+// import { NavLink } from 'react-router-dom';
+// import { Navbar, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
 import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
@@ -40,6 +40,7 @@ export default class NewHeader extends Component {
         this.handleLogin= this.handleLogin.bind(this);
         this.handleChange= this.handleChange.bind(this);
         this.handleSubmit= this.handleSubmit.bind(this);
+        this.combine= this.combine.bind(this);
     }
 
     toggleNav() {
@@ -88,6 +89,9 @@ export default class NewHeader extends Component {
             isModalOpenL: !this.state.isModalOpenL
         })   
         this.toggleModalSucess();
+        setTimeout(()=>{
+            this.setState({isModalSucess:!this.state.isModalSucess})
+        },2000)
     }  
     handleSubmit=(e)=>{
         e.preventDefault();
@@ -103,6 +107,13 @@ export default class NewHeader extends Component {
         // this.props.history.push('/home')
     }
 
+    combine(){
+        this.toggleModalOTP();
+        this.toggleModalSucess();
+        setTimeout(()=>{
+            this.setState({isModalSucess:!this.state.isModalSucess})
+        },2000)
+    }
 
     render() {
         return (
@@ -160,12 +171,12 @@ export default class NewHeader extends Component {
 
                             <form  onSubmit={this.handleLogin}>
                                 <FormGroup className="col-md-12">
-                                        <Input type="email" id="emailID" name="emailID" value ={this.state.email} onChange = {this.handleChange}
+                                        <Input type="email" id="emailID" name="emailID" value ={this.state.emailID} onChange = {this.handleChange}
                                             placeholder="Email" required/>
                                 </FormGroup>
 
                                 <FormGroup className="col-md-12"> 
-                                        <Input type="password" id="passwordLog" name="passwordLog" value ={this.state.password} onChange = {this.handleChange}
+                                        <Input type="password" id="passwordLog" name="passwordLog" value ={this.state.passwordLog} onChange = {this.handleChange}
                                             placeholder="Password" required/>
                                 </FormGroup> 
                                 <p className="forget">Forgot Password?</p>
@@ -233,7 +244,7 @@ export default class NewHeader extends Component {
                             <br/>
                             <Input placeholder="Enter your OTP"></Input>
                             <p className="emailOTP">One time Passcode sent to your email ID- abc@gmail.com</p>
-                            <Input type="submit" value ="Enter" className="btn btnOTP"
+                            <Input type="submit" value ="Enter" className="btn btnOTP" onClick={this.combine}
                                 />
                         </div>
                     </ModalBody>

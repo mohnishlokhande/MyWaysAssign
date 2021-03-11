@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label,Row, Col } from 'reactstrap';
 import './Home.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default class SignUp extends Component {
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label,Row, Col } from 'reactstrap';
 import './Home.css';
-import SignUp from './SignUp';
+// import SignUp from './SignUp';
 
 export default class Login extends Component {
 
