@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import Logo from './MyWays Logo@2x.png';
 import DropD from './dropdown';
-import { Modal, ModalHeader } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
+import {FormGroup, Input} from 'reactstrap';
+
 import SignUp from '../home/SignUp';
 import Login from '../home/Login';
-
+import '../home/Home.css';
+import Success from './Icon awesome-check-circle@2x.png';
 
 
 export default class NewHeader extends Component {
@@ -17,11 +20,26 @@ export default class NewHeader extends Component {
         this.state = {
             isNavOpen: false,
             isModalOpenL: false,
-            isModalOpenS:false
+            isModalOpenS:false,
+            isModalSucess: false,
+            isModalOTP:false,
+            emailID :'',
+            passwordLog:'' ,
+            firstname : '',
+            lastname: '',
+            password : '',
+            email :'',
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModalL= this.toggleModalL.bind(this);
         this.toggleModalS= this.toggleModalS.bind(this);
+        this.toggleModalSucess= this.toggleModalSucess.bind(this);
+        this.toggleModalOTP= this.toggleModalOTP.bind(this);
+        this.changeModal= this.changeModal.bind(this);
+        this.handleChange= this.handleChange.bind(this);
+        this.handleLogin= this.handleLogin.bind(this);
+        this.handleChange= this.handleChange.bind(this);
+        this.handleSubmit= this.handleSubmit.bind(this);
     }
 
     toggleNav() {
@@ -39,6 +57,52 @@ export default class NewHeader extends Component {
             isModalOpenS: !this.state.isModalOpenS
         });
     }
+    toggleModalSucess(){
+        this.setState({
+            isModalSucess: !this.state.isModalSucess
+        });
+    }
+    toggleModalOTP(){
+        this.setState({
+            isModalOTP: !this.state.isModalOTP
+        });
+    }
+    changeModal(){
+        this.setState({
+            isModalOpenS: !this.state.isModalOpenS,
+            isModalOpenL: !this.state.isModalOpenL
+        })
+    }
+
+    handleChange = (e) =>
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+
+    handleLogin=(e)=>{
+        e.preventDefault();
+
+        this.setState({
+            emailID :'',
+            passwordLog:'' ,  
+            isModalOpenL: !this.state.isModalOpenL
+        })   
+        this.toggleModalSucess();
+    }  
+    handleSubmit=(e)=>{
+        e.preventDefault();
+
+        this.setState({
+            firstname:'',
+            lastname:'',
+            password:'' ,
+            email :'',
+        })
+        this.toggleModalS();
+        this.toggleModalOTP();
+        // this.props.history.push('/home')
+    }
+
 
     render() {
         return (
@@ -87,16 +151,92 @@ export default class NewHeader extends Component {
                         <ModalHeader toggle={this.toggleModalL}>
                             <p className="headL">Login</p>
                         </ModalHeader>
-                        <Login isopen={this.state.isModalOpenL}
-                            refreshPage={this.toggleModalL}/>
+                        <ModalBody className="modalL" style={{padding:"35px"}}>
+                            <div className="logouterbox">
+                                <div className="headLogin">
+                                    <p className="stu">Student</p>
+                                    <p>_____</p>
+                                </div>
+
+                            <form  onSubmit={this.handleLogin}>
+                                <FormGroup className="col-md-12">
+                                        <Input type="email" id="emailID" name="emailID" value ={this.state.email} onChange = {this.handleChange}
+                                            placeholder="Email" required/>
+                                </FormGroup>
+
+                                <FormGroup className="col-md-12"> 
+                                        <Input type="password" id="passwordLog" name="passwordLog" value ={this.state.password} onChange = {this.handleChange}
+                                            placeholder="Password" required/>
+                                </FormGroup> 
+                                <p className="forget">Forgot Password?</p>
+                                <FormGroup className="col-md-12"> 
+                                        <Input type="submit" value ="Login" className="btn btnSign" 
+                                            />
+                                </FormGroup> 
+                                <p className="newL" onClick={this.changeModal} >New to MyWays? Sign Up here</p>
+                            </form>
+                            </div>
+                        </ModalBody>
                 </Modal>
+
                 <Modal isOpen={this.state.isModalOpenS} toggle={this.toggleModalS} style={{top:"12vh"}}>
                         <ModalHeader toggle={this.toggleModalS} className="homeTitle">
                             <p className="headS">Sign Up</p>
                             <p className="subS">It's quick and easy</p>    
                         </ModalHeader>
-                        <SignUp isopen={this.state.isModalOpenS}
-                            refreshPage={this.toggleModalS}/>
+                        <ModalBody className="modalBS">
+                            <form  onSubmit={this.handleSubmit}>
+                                <Row className="col-md-12">
+                                <FormGroup className="col-md-6">
+                        
+                                        <Input type="text" id="firstname" name="firstname" value ={this.state.firstname} onChange = {this.handleChange}
+                                            placeholder="First Name" required/>
+
+                                </FormGroup>
+                                <FormGroup className="col-md-6">
+                    
+                                        <Input type="text" id="lastname" name="lastname" value ={this.state.lastname} onChange = {this.handleChange}
+                                            placeholder="Last Name" required/>
+                                </FormGroup>
+                                </Row>
+                                <FormGroup className="col-md-12">
+                                    
+                                        <Input type="email" id="email" name="email" value ={this.state.email} onChange = {this.handleChange}
+                                            placeholder="Your Email" required/>
+            
+                                </FormGroup>
+
+                                <FormGroup className="col-md-12"> 
+                                        <Input type="password" id="password" name="password" value ={this.state.password} onChange = {this.handleChange}
+                                            placeholder="Password" required/>
+                                </FormGroup> 
+                                <br/>
+                                <FormGroup className="col-md-12"> 
+                                        <Input type="submit" value ="Sign Up" className="btn btnSign"
+                                            />
+                                </FormGroup>
+                            </form>
+                        </ModalBody>
+                </Modal>
+
+                <Modal isOpen={this.state.isModalSucess} toggle={this.toggleModalSucess} style={{top:"12vh"}} className="modalsuccess">
+                    <ModalBody className="boxsuccess">
+                        <img src={Success} style={{width:"73px"}}  alt="Successful"/><br/>
+                        <h1 className="successH">Thanks. Successful!</h1>
+                    </ModalBody>
+                </Modal>
+
+                <Modal isOpen={this.state.isModalOTP} toggle={this.toggleModalOTP} style={{top:"12vh"}} className="modalsuccess">
+                    <ModalBody className="boxOTP">
+                        <div className="boxSinner">
+                            <h1 className="successH">OTP sent!</h1>
+                            <br/>
+                            <Input placeholder="Enter your OTP"></Input>
+                            <p className="emailOTP">One time Passcode sent to your email ID- abc@gmail.com</p>
+                            <Input type="submit" value ="Enter" className="btn btnOTP"
+                                />
+                        </div>
+                    </ModalBody>
                 </Modal>
             </div>
         )

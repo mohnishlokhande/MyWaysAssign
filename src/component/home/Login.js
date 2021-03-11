@@ -84,15 +84,6 @@ export default class Login extends Component {
                     </form>
                     </div>
                 </ModalBody>
-                <Modal isOpen={this.state.isModalOpenS} toggle={this.toggleModalS}>
-                        <ModalHeader toggle={this.toggleModalS} className="homeTitle">
-                            <p className="headS">Sign Up</p>
-                            <p className="subS">It's quick and easy</p>    
-                        </ModalHeader>
-                        <SignUp isopen={this.state.isModalOpenS}
-                            refreshPage={this.toggleModalS}/>
-                </Modal>
-
 
             </>
         )
