@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/MyWaysAssign/static/css/main.a976f6ca.chunk.css",
-    "main.js": "/MyWaysAssign/static/js/main.c82182b6.chunk.js",
-    "main.js.map": "/MyWaysAssign/static/js/main.c82182b6.chunk.js.map",
-    "runtime-main.js": "/MyWaysAssign/static/js/runtime-main.64549cdd.js",
-    "runtime-main.js.map": "/MyWaysAssign/static/js/runtime-main.64549cdd.js.map",
+    "main.css": "/MyWaysAssign/static/css/main.bab42a19.chunk.css",
+    "main.js": "/MyWaysAssign/static/js/main.f615d93d.chunk.js",
+    "main.js.map": "/MyWaysAssign/static/js/main.f615d93d.chunk.js.map",
+    "runtime-main.js": "/MyWaysAssign/static/js/runtime-main.ae5e68fe.js",
+    "runtime-main.js.map": "/MyWaysAssign/static/js/runtime-main.ae5e68fe.js.map",
     "static/css/2.e825a94b.chunk.css": "/MyWaysAssign/static/css/2.e825a94b.chunk.css",
-    "static/js/2.300a3ea8.chunk.js": "/MyWaysAssign/static/js/2.300a3ea8.chunk.js",
-    "static/js/2.300a3ea8.chunk.js.map": "/MyWaysAssign/static/js/2.300a3ea8.chunk.js.map",
-    "static/js/3.8254b969.chunk.js": "/MyWaysAssign/static/js/3.8254b969.chunk.js",
-    "static/js/3.8254b969.chunk.js.map": "/MyWaysAssign/static/js/3.8254b969.chunk.js.map",
+    "static/js/2.d7cdb149.chunk.js": "/MyWaysAssign/static/js/2.d7cdb149.chunk.js",
+    "static/js/2.d7cdb149.chunk.js.map": "/MyWaysAssign/static/js/2.d7cdb149.chunk.js.map",
+    "static/js/3.2599beb9.chunk.js": "/MyWaysAssign/static/js/3.2599beb9.chunk.js",
+    "static/js/3.2599beb9.chunk.js.map": "/MyWaysAssign/static/js/3.2599beb9.chunk.js.map",
     "index.html": "/MyWaysAssign/index.html",
     "static/css/2.e825a94b.chunk.css.map": "/MyWaysAssign/static/css/2.e825a94b.chunk.css.map",
-    "static/css/main.a976f6ca.chunk.css.map": "/MyWaysAssign/static/css/main.a976f6ca.chunk.css.map",
-    "static/js/2.300a3ea8.chunk.js.LICENSE.txt": "/MyWaysAssign/static/js/2.300a3ea8.chunk.js.LICENSE.txt",
+    "static/css/main.bab42a19.chunk.css.map": "/MyWaysAssign/static/css/main.bab42a19.chunk.css.map",
+    "static/js/2.d7cdb149.chunk.js.LICENSE.txt": "/MyWaysAssign/static/js/2.d7cdb149.chunk.js.LICENSE.txt",
     "static/media/MyWays Logo@2x.e3df143b.png": "/MyWaysAssign/static/media/MyWays Logo@2x.e3df143b.png",
     "static/media/font-awesome.min.css": "/MyWaysAssign/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/logo.6ce24c58.svg": "/MyWaysAssign/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.64549cdd.js",
+    "static/js/runtime-main.ae5e68fe.js",
     "static/css/2.e825a94b.chunk.css",
-    "static/js/2.300a3ea8.chunk.js",
-    "static/css/main.a976f6ca.chunk.css",
-    "static/js/main.c82182b6.chunk.js"
+    "static/js/2.d7cdb149.chunk.js",
+    "static/css/main.bab42a19.chunk.css",
+    "static/js/main.f615d93d.chunk.js"
   ]
 }
