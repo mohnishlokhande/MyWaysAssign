@@ -119,7 +119,7 @@ export default class Home extends Component {
                             <div className="boxSinner">
                                 <h1 className="successH">OTP sent!</h1>
                                 <br/>
-                                <Input placeholder="Enter your OTP"></Input>
+                                <Input placeholder="Enter your OTP" required></Input>
                                 <p className="emailOTP">One time Passcode sent to your email ID- abc@gmail.com</p>
                                 <Input type="submit" value ="Enter" className="btn btnOTP" onClick={this.combine}
                                     />
