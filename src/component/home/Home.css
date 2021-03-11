@@ -124,6 +124,9 @@
         margin-left: 25%;
     }
 }
+.modal-content {
+    border-radius: 0.6rem !important;
+}
 .modalsign {
     border-radius: 1rem !important;
 }
