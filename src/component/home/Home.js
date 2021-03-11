@@ -78,7 +78,7 @@ export default class Home extends Component {
                         <a className="hget" onClick={this.toggleModalS}>Get Started</a>
                     </button> 
 
-                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModalS} style={{top:"12vh"}}>
+                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModalS} style={{top:"12vh"}} className="modalsign">
                         <ModalHeader toggle={this.toggleModalS} className="homeTitle">
                             <p className="headS">Sign Up</p>
                             <p className="subS">It's quick and easy</p>    

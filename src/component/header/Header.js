@@ -167,11 +167,11 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <Modal isOpen={this.state.isModalOpenL} toggle={this.toggleModalL} 
-                    className="modalLog" style={{position: "absolute",width:"100%", margin:'0'}}>
+                    className="modalLog" style={{position: "absolute",width:"100%", margin:'0',borderRadius:"0.1px"}}>
                         <ModalHeader toggle={this.toggleModalL}>
                             <p className="headL">Login</p>
                         </ModalHeader>
-                        <ModalBody className="modalL" style={{padding:"35px"}}>
+                        <ModalBody className="modalL" style={{padding:"35px" }}>
                             <div className="logouterbox">
                                 <div className="headLogin">
                                     <p className="stu">Student</p>
